@@ -11,8 +11,185 @@ export const loadUser = () => async dispatch => {
       payload: res.data
     });
   } catch (err) {
+    console.log(err);
+    // dispatch({
+    //   type: 'AUTH_ERROR'
+    // });
+  }
+};
+
+//resend
+export const resend = () => async dispatch => {
+  try {
+    const res = await api.post('/auth/resend');
+    console.log(res);
+    toast.success('success', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      })  
+  } catch (err) {
     dispatch({
       type: 'AUTH_ERROR'
+    });
+  }
+}
+
+// Register User
+export const registerByAdmin = formData => async dispatch => {
+  try {
+    const res = await api.post('/auth/register', formData);
+
+    // dispatch({
+    //   type: 'REGISTER_SUCCESS',
+    //   payload: res.data
+    // });
+    // dispatch(loadUser());
+    //get users
+    const res_user = await api.get('/profile/getUsers');
+        
+    dispatch({
+        type: 'GET_USERS',
+        payload: res_user.data
+    });
+
+    toast.success('success', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      })  
+    //get users
+    
+  } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach(error => 
+        toast.error(error.msg, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          })  
+      );
+    }
+    dispatch({
+      type: 'REGISTER_FAIL'
+    });
+  }
+};
+
+//update user
+export const editUser = formData => async dispatch => {
+  try {
+    const res = await api.post('/auth/editUser', formData);
+
+    dispatch({
+      type: 'REGISTER_SUCCESS',
+      payload: res.data
+    });
+    dispatch(loadUser());
+    //get users
+    const res_user = await api.get('/profile/getUsers');
+        
+    dispatch({
+        type: 'GET_USERS',
+        payload: res_user.data
+    });
+
+    toast.success('success', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      })  
+    //get users
+    
+  } catch (err) {
+    console.log(err);
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach(error => 
+        toast.error(error.msg, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          })  
+      );
+    }
+    dispatch({
+      type: 'REGISTER_FAIL'
+    });
+  }
+};
+
+//delete user
+export const deleteUser = formData => async dispatch => {
+  try {
+    const res = await api.post('/auth/deleteUser', formData);
+
+    dispatch({
+      type: 'REGISTER_SUCCESS',
+      payload: res.data
+    });
+    dispatch(loadUser());
+    //get users
+    const res_user = await api.get('/profile/getUsers');
+        
+    dispatch({
+        type: 'GET_USERS',
+        payload: res_user.data
+    });
+
+    toast.success('success', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      })  
+    //get users
+    
+  } catch (err) {
+    console.log(err);
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach(error => 
+        toast.error(error.msg, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          })  
+      );
+    }
+    dispatch({
+      type: 'REGISTER_FAIL'
     });
   }
 };

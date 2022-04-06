@@ -17,6 +17,9 @@ const initialState = {
         avatar: '',
         wallet: '',
         date_form: '',
+        admin: null,
+        verifylink: '',
+        verified: false
     },
 };
   

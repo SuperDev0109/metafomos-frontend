@@ -53,7 +53,7 @@ const Login = () => {
             <ToastContainer />
             <div style={{ height: '230px' }}></div>
             <div className='create_game'>
-                <img src='assets/custom/images/game.png' width="310px" height="648px" />
+                <img src='assets/custom/images/login_img.png' width="330px" height="648px" />
                 <div className='right'>
                     <div className='panel1'>
                         <span>Sign In</span>

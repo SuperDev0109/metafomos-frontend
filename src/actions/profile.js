@@ -1,17 +1,33 @@
 import api from '../utils/api';
 import { toast } from 'react-toastify';
 
-export const getReferralLink = () => async dispatch => {
-  try {
-    const res = await api.get('/profile/getReferralLink');
+// export const getReferralLink = () => async dispatch => {
+//   try {
+//     const res = await api.get('/profile/getReferralLink');
 
-    if (res.data === undefined || res.data === '') {
-        document.querySelector('#referralLink').click();
-    }
+//     if (res.data === undefined || res.data === '') {
+//         document.querySelector('#joinBtn').click();
+//     }
+
+//     dispatch({
+//         type: 'GET_REFERRAL_LINK',
+//         payload: res.data
+//     });
+//   } catch (err) {
+//     dispatch({
+//       type: 'AUTH_ERROR'
+//     });
+//   }
+// };
+
+// Load User
+export const loadUser = () => async dispatch => {
+  try {
+    const res = await api.get('/auth');
 
     dispatch({
-        type: 'GET_REFERRAL_LINK',
-        payload: res.data
+      type: 'USER_LOADED',
+      payload: res.data
     });
   } catch (err) {
     dispatch({
@@ -60,21 +76,17 @@ export const setReferralLink = (data) => async dispatch => {
         switch (parseInt(level)) {
           case 0:
             document.getElementById('task1').style.display = 'block';
-            document.getElementById("lv1").style.display = 'block'; //pass token btn
             break;
           case 1:
             document.getElementById('task2').style.display = 'block';
-            parseInt(follow1) === 1 ? document.querySelector("#follow1").innerHTML = 'FOLLOWED' : document.querySelector("#follow1").innerHTML = 'FOLLOW';
-            parseInt(follow2) === 1 ? document.querySelector("#follow2").innerHTML = 'FOLLOWED' : document.querySelector("#follow2").innerHTML = 'FOLLOW';
-            parseInt(follow3) === 1 ? document.querySelector("#follow3").innerHTML = 'FOLLOWED' : document.querySelector("#follow3").innerHTML = 'FOLLOW';
-            parseInt(follow4) === 1 ? document.querySelector("#follow4").innerHTML = 'FOLLOWED' : document.querySelector("#follow4").innerHTML = 'FOLLOW';
-            parseInt(follow5) === 1 ? document.querySelector("#follow5").innerHTML = 'FOLLOWED' : document.querySelector("#follow5").innerHTML = 'FOLLOW';
-  
-            document.getElementById("lv2").style.display = 'block'; //pioneer token btn
+            if(parseInt(follow1) === 1) { document.querySelector("#follow1").innerHTML = 'FOLLOWED'; document.getElementById('follow1').setAttribute('class', 'mybtn1') } else { document.querySelector("#follow1").innerHTML = 'FOLLOW'; document.getElementById('follow1').setAttribute('class', 'mybtn2') }   
+            if(parseInt(follow2) === 1) { document.querySelector("#follow2").innerHTML = 'FOLLOWED'; document.getElementById('follow2').setAttribute('class', 'mybtn1') } else { document.querySelector("#follow2").innerHTML = 'FOLLOW'; document.getElementById('follow2').setAttribute('class', 'mybtn2') }   
+            if(parseInt(follow3) === 1) { document.querySelector("#follow3").innerHTML = 'FOLLOWED'; document.getElementById('follow3').setAttribute('class', 'mybtn1') } else { document.querySelector("#follow3").innerHTML = 'FOLLOW'; document.getElementById('follow3').setAttribute('class', 'mybtn2') }   
+            if(parseInt(follow4) === 1) { document.querySelector("#follow4").innerHTML = 'FOLLOWED'; document.getElementById('follow4').setAttribute('class', 'mybtn1') } else { document.querySelector("#follow4").innerHTML = 'FOLLOW'; document.getElementById('follow4').setAttribute('class', 'mybtn2') }   
+            if(parseInt(follow5) === 1) { document.querySelector("#follow5").innerHTML = 'FOLLOWED'; document.getElementById('follow5').setAttribute('class', 'mybtn1') } else { document.querySelector("#follow5").innerHTML = 'FOLLOW'; document.getElementById('follow5').setAttribute('class', 'mybtn2') }   
             break;
           case 2:
             document.getElementById('task3').style.display = 'block';
-            document.getElementById("lv3").style.display = 'block';
             break;
         }
 
@@ -115,19 +127,19 @@ export const setReferralLink = (data) => async dispatch => {
 
       switch (formData.type) {
         case 1:
-          formData.type === 1 ? document.querySelector("#follow1").innerHTML = 'FOLLOWED' : document.querySelector("#follow1").innerHTML = 'FOLLOW';
+          if(formData.type === 1) { document.querySelector("#follow1").innerHTML = 'FOLLOWED'; document.getElementById('follow1').setAttribute('class', 'mybtn1'); } else { document.querySelector("#follow1").innerHTML = 'FOLLOW'; document.getElementById('follow1').setAttribute('class', 'mybtn2'); } 
           break;
         case 2:
-          formData.type === 2 ? document.querySelector("#follow2").innerHTML = 'FOLLOWED' : document.querySelector("#follow2").innerHTML = 'FOLLOW';
+          if(formData.type === 2) { document.querySelector("#follow2").innerHTML = 'FOLLOWED'; document.getElementById('follow2').setAttribute('class', 'mybtn1'); } else { document.querySelector("#follow2").innerHTML = 'FOLLOW'; document.getElementById('follow2').setAttribute('class', 'mybtn2'); } 
           break;
         case 3:
-          formData.type === 3 ? document.querySelector("#follow3").innerHTML = 'FOLLOWED' : document.querySelector("#follow3").innerHTML = 'FOLLOW';
+          if(formData.type === 3) { document.querySelector("#follow3").innerHTML = 'FOLLOWED'; document.getElementById('follow3').setAttribute('class', 'mybtn1'); } else { document.querySelector("#follow3").innerHTML = 'FOLLOW'; document.getElementById('follow3').setAttribute('class', 'mybtn2'); } 
           break;
         case 4:
-          formData.type === 4 ? document.querySelector("#follow4").innerHTML = 'FOLLOWED' : document.querySelector("#follow4").innerHTML = 'FOLLOW';
+          if(formData.type === 4) { document.querySelector("#follow4").innerHTML = 'FOLLOWED'; document.getElementById('follow4').setAttribute('class', 'mybtn1'); } else { document.querySelector("#follow4").innerHTML = 'FOLLOW'; document.getElementById('follow4').setAttribute('class', 'mybtn2'); } 
           break;
         case 5:
-          formData.type === 5 ? document.querySelector("#follow5 ").innerHTML = 'FOLLOWED' : document.querySelector("#follow5").innerHTML = 'FOLLOW';
+          if(formData.type === 5) { document.querySelector("#follow5").innerHTML = 'FOLLOWED'; document.getElementById('follow5').setAttribute('class', 'mybtn1'); } else { document.querySelector("#follow5").innerHTML = 'FOLLOW'; document.getElementById('follow5').setAttribute('class', 'mybtn2'); } 
           break;
       }
       
@@ -153,3 +165,42 @@ export const setReferralLink = (data) => async dispatch => {
     }
   };
 
+  //profile actions
+
+  export const savePersonalData = (formData) => async dispatch => {
+    try {
+      const res = await api.post('/profile/savePersonalData', formData);
+
+      toast.success('success', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }) 
+
+        dispatch({
+          type: 'USER_LOADED',
+          payload: res.data
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+
+  //verify Link
+  export const verifyLink = (formData) => async dispatch => {
+    try {
+      const res = await api.post('/auth/verifyLink', formData);
+      if (res.data === 'success') {
+        document.getElementById("verifyText").innerText = 'Email success verify';
+      } else {
+        document.getElementById("verifyText").innerText = 'Email not verified';
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }

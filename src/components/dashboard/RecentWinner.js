@@ -9,7 +9,7 @@ const RecentWinner = () => {
                <div className="row">
                   <div className="col-lg-12">
                      <div className="top-section">
-                        <h3>Recent winners</h3>
+                        <h3>Recent Achievers</h3>
                         <a href="#">View all</a>
                      </div>
                   </div>
@@ -18,7 +18,7 @@ const RecentWinner = () => {
                   <div className="col-xl-4 col-lg-6 col-md-6">
                      <div className="single-winner">
                         <div className="img">
-                           <img src="assets/images/r-winner/1.png" alt="" />
+                                 <img src="assets/custom/images/product/1.png" alt="" width="75px" height="126px" />
                         </div>
                         <div className="content">
                            <div className="top-content">
@@ -41,7 +41,7 @@ const RecentWinner = () => {
                   <div className="col-xl-4 col-lg-6 col-md-6">
                      <div className="single-winner">
                         <div className="img">
-                           <img src="assets/images/r-winner/2.png" alt="" />
+                                 <img src="assets/custom/images/product/2.png" alt="" width="75px" height="126px" />
                         </div>
                         <div className="content">
                            <div className="top-content">
@@ -64,7 +64,7 @@ const RecentWinner = () => {
                   <div className="col-xl-4 col-lg-6 col-md-6">
                      <div className="single-winner">
                         <div className="img">
-                           <img src="assets/images/r-winner/3.png" alt="" />
+                           <img src="assets/custom/images/product/3.png" alt="" width="75px" height="126px" />
                         </div>
                         <div className="content">
                            <div className="top-content">

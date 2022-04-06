@@ -13,13 +13,13 @@ const GamePlay = () => {
                   <div className="col-lg-12">
                      <div className="section-heading">
                         <h5 className="subtitle">
-                           The Games You Love
+                           Simple Tasks You Already Do
                         </h5>
                         <h2 className="title ">
-                           PLAY AND WIN
+                           Play and Earn
                         </h2>
                         <h6 className="text">
-                           Where skill is rewarded.Join millions of players worldwide!
+                           Where your likes and follows are rewarded!
                         </h6>
                      </div>
                   </div>
@@ -28,7 +28,7 @@ const GamePlay = () => {
                   <div className="col-xl-3 col-lg-4 col-md-6">
                      <div className="single-play">
                         <div className="image">
-                           <img src="assets/images/passToken/passToken1.png" alt="" />
+                           <img src="assets/custom/images/lv1.png" alt="" />
                         </div>
                         <div className="contant">
                            <a href="#" className="mybtn1">EARN</a>
@@ -67,7 +67,7 @@ const GamePlay = () => {
                   <div className="col-xl-3 col-lg-4 col-md-6">
                      <div className="single-play">
                         <div className="image">
-                           <img src="assets/images/passToken/passToken1.png" alt="" />
+                           <img src="assets/custom/images/lv2.png" alt="" />
                         </div>
                         <div className="contant">
                            <a href="#" className="mybtn1">EARN</a>
@@ -106,7 +106,7 @@ const GamePlay = () => {
                   <div className="col-xl-3 col-lg-4 col-md-6">
                      <div className="single-play">
                         <div className="image">
-                           <img src="assets/images/passToken/passToken1.png" alt="" />
+                           <img src="assets/custom/images/lv3.png" alt="" />
                         </div>
                         <div className="contant">
                            <a href="#" className="mybtn1">EARN</a>
@@ -145,7 +145,7 @@ const GamePlay = () => {
                   <div className="col-xl-3 col-lg-4 col-md-6">
                      <div className="single-play">
                         <div className="image">
-                           <img src="assets/images/passToken/passToken1.png" alt="" />
+                           <img src="assets/custom/images/lv4.png" alt="" />
                         </div>
                         <div className="contant">
                            <a href="#" className="mybtn1">EARN</a>

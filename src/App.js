@@ -15,6 +15,8 @@ import Register from './components/auth/Register';
 import Connect from './components/connect/Connect';
 //profile
 import Overview from './components/profile/Overview';
+import Profile from './components/profile/Profile';
+import Verify from './components/profile/Verify';
 //Admin
 import AdminView from './components/admin/Admin';
 
@@ -49,6 +51,8 @@ function App() {
             <Route exact path="/login" element={ <Login /> } />
             <Route exact path="/register" element={ <Register /> } />
             <Route exact path="/profile/overview" element={ <Overview /> } />
+            <Route exact path="/profile/profile" element={ <Profile /> } />
+            <Route exact path="/verify/:id" element={ <Verify /> } />
             <Route exact path="/connect" element={ <Connect />  } />
             <Route exact path="/superadmin" element={ <AdminView />  } />
           </Routes>

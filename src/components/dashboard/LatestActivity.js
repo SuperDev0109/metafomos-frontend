@@ -16,7 +16,7 @@ const LatestActivity = () => {
                            Latest Activities
                         </h2>
                         <h6 className="text">
-                           Where skill is rewarded.Join millions of players worldwide!
+                           Get Money, Cryto, NFT, NFT rewards for completing daily tasks
                         </h6>
                      </div>
                   </div>
@@ -102,7 +102,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>_ 25.8772200 BTC</h6>
+                                             <h6>30 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -126,7 +126,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>+ 25.8772200 BTC</h6>
+                                             <h6>90 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -150,7 +150,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>25.8772200 BTC</h6>
+                                             <h6>20 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -174,7 +174,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>_ 25.8772200 BTC</h6>
+                                             <h6>87 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -198,7 +198,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>25.8772200 BTC</h6>
+                                             <h6>65 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -222,7 +222,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>+ 25.8772200 BTC</h6>
+                                             <h6>34 $</h6>
                                           </div>
                                        </div>
                                        
@@ -301,7 +301,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>_ 25.8772200 BTC</h6>
+                                             <h6>71 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -325,7 +325,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>+ 25.8772200 BTC</h6>
+                                             <h6>80 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -349,7 +349,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>25.8772200 BTC</h6>
+                                             <h6>83 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -373,7 +373,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>_ 25.8772200 BTC</h6>
+                                             <h6>52 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -397,7 +397,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>25.8772200 BTC</h6>
+                                             <h6>47 $</h6>
                                           </div>
                                        </div>
                                        <div className="s-a-b">
@@ -421,7 +421,7 @@ const LatestActivity = () => {
                                           </div>
                                           <div className="right">
                                              <img src="assets/images/arcive/mony.png" alt="" />
-                                             <h6>+ 25.8772200 BTC</h6>
+                                             <h6>29 $</h6>
                                           </div>
                                        </div>
                                        

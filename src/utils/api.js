@@ -2,19 +2,20 @@ import axios from 'axios';
 // import store from '../store';
 // import { GET_NEWS } from '../actions/types';
 
+const api = axios.create({
+  baseURL: 'https://metafomosbackend.herokuapp.com/api',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
 // const api = axios.create({
-//   baseURL: 'https://metafomos-backend.herokuapp.com/api',
+//   baseURL: '/api',
 //   headers: {
 //     'Content-Type': 'application/json'
 //   }
 // });
 
-const api = axios.create({
-  baseURL: '/api',
-  headers: {
-    'Content-Type': 'application/json'
-  }
-});
 /**
  intercept any error responses from the api
  and check if the token is no longer valid.

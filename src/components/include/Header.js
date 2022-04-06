@@ -100,10 +100,10 @@ const Header = () => {
                 }
                 break;
             case 1:
-                logUserImage = (<img src='../assets/custom/images/lv1.png' width="44px" height="44px" alt="" style={{ borderRadius: '50%' }} />)
+                logUserImage = (<img src='../assets/custom/images/lv1_small.png' width="44px" height="44px" alt="" style={{ borderRadius: '50%' }} />)
                 break;
             case 2:
-                logUserImage = (<img src='../assets/custom/images/lv2.png' width="44px" height="44px" alt="" style={{ borderRadius: '50%' }} />)
+                logUserImage = (<img src='../assets/custom/images/lv2_small.png' width="44px" height="44px" alt="" style={{ borderRadius: '50%' }} />)
                 break;
             default:
                 break;
@@ -172,6 +172,11 @@ const Header = () => {
                            </div>
                            <div className="right-content">
                               <ul className="right-list">
+                                 <li>
+                                    <div>
+                                       <span style={{ color: 'yellow', fontWeight: '600' }}>BETA TESTING</span>
+                                    </div>
+                                 </li>
                                  <li>
                                     <div className="language-selector">
                                        <select name="language" className="language">

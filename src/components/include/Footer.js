@@ -43,7 +43,7 @@ const Footer = () => {
                <div className="row">
                   <div className="col-lg-12">
                      <div className="flogo">
-                        <a href="#"><img src="../assets/images/logo2.png" alt="" width="150px" height="86.05px" /></a>
+                        <a href="#"><img src="../assets/images/logo2.png" alt="" width="300px" height="172.1px" /></a>
                      </div>
                      <div className="social-links">
                         <ul>
@@ -110,7 +110,8 @@ const Footer = () => {
                <div className="container">
                   <div className="row">
                      <div className="col-lg-12">
-                           <p>Copyright © 2022.All Rights Reserved By Metafomo</p>
+                           {/* <p>Copyright © 2022.All Rights Reserved By Metafomo</p> */}
+                           <p>Metafomo to Metafomos</p>
                      </div>
                   </div>
                </div>

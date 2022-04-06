@@ -10,13 +10,13 @@ const ExLottery = () => {
                   <div className="col-lg-12">
                      <div className="section-heading">
                         <h5 className="subtitle">
-                           Exclusive Lottery
+                           Get your FomoMerch
                         </h5>
                         <h2 className="title ">
-                           Raffles Ending Soon
+                           FomoMerch based on your NFT level
                         </h2>
                         <h6 className="text">
-                           Now's your chance to win a exclusive product!
+                           Now's your chance to show off your Accolades
                         </h6>
                      </div>
                   </div>
@@ -28,7 +28,7 @@ const ExLottery = () => {
                            <div className="single-tikit">
                               <div className="image">
                                  <span className="tag">Ending Soon</span>
-                                 <img src="assets/images/product/1.png" alt="" />
+                                 <img src="assets/custom/images/product/1.png" alt="" />
                               </div>
                               <div className="content">
                                  <div className="top-area">
@@ -55,7 +55,7 @@ const ExLottery = () => {
                            <div className="single-tikit">
                               <div className="image">
                                  <span className="tag">Ending Soon</span>
-                                 <img src="assets/images/product/2.png" alt="" />
+                                 <img src="assets/custom/images/product/2.png" alt="" />
                               </div>
                               <div className="content">
                                  <div className="top-area">
@@ -82,7 +82,7 @@ const ExLottery = () => {
                            <div className="single-tikit">
                               <div className="image">
                                  <span className="tag">Ending Soon</span>
-                                 <img src="assets/images/product/3.png" alt="" />
+                                 <img src="assets/custom/images/product/3.png" alt="" />
                               </div>
                               <div className="content">
                                  <div className="top-area">
@@ -109,7 +109,7 @@ const ExLottery = () => {
                            <div className="single-tikit">
                               <div className="image">
                                  <span className="tag">Ending Soon</span>
-                                 <img src="assets/images/product/1.png" alt="" />
+                                 <img src="assets/custom/images/product/2.png" alt="" />
                               </div>
                               <div className="content">
                                  <div className="top-area">

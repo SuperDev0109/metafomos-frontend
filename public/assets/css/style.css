@@ -435,7 +435,7 @@ select:focus {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  padding: 210px 0px 10px;
+  padding: 162px 0px 10px;
 }
 .breadcrumb-area.help {
   background: url(../images/bc/help.jpg);
@@ -1194,7 +1194,7 @@ select:focus {
 /* Hero Area Start */
 .hero-area {
   position: relative;
-  padding: 435px 0px 300px;
+  padding: 435px 0px 234px;
   position: relative;
   background: #070b28;
   overflow: hidden;
@@ -1918,7 +1918,8 @@ select:focus {
 /* join us area end */
 /* How play area Start */
 .how-to-play {
-  padding: 120px 0px 0px;
+  /* padding: 120px 0px 0px; */
+  padding: 0px 0px 0px;
   background: #1f0644;
   position: relative;
 }
@@ -6100,7 +6101,7 @@ select:focus {
   display: flex;
   justify-content: space-between;
   padding-left: 230px;
-  padding-top: 75px;
+  padding-top: 44px;
 }
 .breadcrumb-area.gamer-profile .bc-content .right {
   display: flex;
@@ -6476,6 +6477,10 @@ select:focus {
 }
 .user-main-dashboard main .main-box .table-responsive tbody tr {
   border-top: 3px solid #25165a;
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .user-main-dashboard main .main-box .table-responsive tbody tr:last-child {
   border-bottom: 3px solid #25165a;
@@ -7211,7 +7216,7 @@ select:focus {
   color: #cec9ff;
 }
 .u-setting-area .single-user-setting .s-content-area table tr td:first-child {
-  text-align: right;
+  text-align: center;
 }
 .u-setting-area .single-user-setting .s-content-area table tr td:first-child span {
   margin: 0px 20px;

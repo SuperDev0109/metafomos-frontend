@@ -44,7 +44,7 @@
     "web3": "^1.7.0"
   },
   "scripts": {
-    "start": "set PORT=80 && react-scripts start",
+    "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -72,5 +72,5 @@
     "css-loader": "^6.5.1",
     "style-loader": "^3.3.1"
   },
-  "proxy": "https://metafomosbackend.herokuapp.com/"
+  "proxy": "https://metafomos-backend.herokuapp.com"
 }

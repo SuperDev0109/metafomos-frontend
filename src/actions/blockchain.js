@@ -50,13 +50,13 @@ export const connect = () => {
             if(networkId == 4) {
                const SmartContractObj = new Web3EthContract(
                   SmartContract, //abi 
-                  '0x037b8C3db29d1E53E035AB83d369145Ff9009D34' // ** IMPORTANT ** PASTE CONTRACT ADDRESS
+                  '0xfD4CA4fCB8f3D328eC3281122D5C5A01c0193006' // ** IMPORTANT ** PASTE CONTRACT ADDRESS
                );
                dispatch(
                   connectSuccess({
                      account: accounts[0],
                      smartContract: SmartContractObj,
-                     smartContractAddress: '0x037b8C3db29d1E53E035AB83d369145Ff9009D34'
+                     smartContractAddress: '0xfD4CA4fCB8f3D328eC3281122D5C5A01c0193006'
                      // web3: web3
                   })
                );
