@@ -71,13 +71,23 @@ export const setReferralLink = (data) => async dispatch => {
   export const getLevelandFollow = () => async dispatch => {
     try {
         const res = await api.get('/profile/getLevelandFollow');
-        const { level, level1_done, level2_done, follow1, follow2, follow3, follow4, follow5 } = res.data.user;
+        const { level, level1_done, level2_done, follow1, follow2, follow3, follow4, follow5, firstname, lastname, verified } = res.data.user;
 
         switch (parseInt(level)) {
           case 0:
+            if ( verified && (firstname !== '' && lastname !== '' && firstname && lastname) ) {
+              document.getElementById('lv1').setAttribute('class', 'mybtn1 animationBtn');
+            } else {
+              document.getElementById('lv1').setAttribute('class', 'mybtn2');
+            }
             document.getElementById('task1').style.display = 'block';
             break;
           case 1:
+            if( (parseInt(follow1)+parseInt(follow2)+parseInt(follow3)+parseInt(follow4)+parseInt(follow5)) === 5 ) {
+              document.getElementById('lv2').setAttribute('class', 'mybtn1 animationBtn');
+            } else {
+              document.getElementById('lv2').setAttribute('class', 'mybtn2');
+            }
             document.getElementById('task2').style.display = 'block';
             if(parseInt(follow1) === 1) { document.querySelector("#follow1").innerHTML = 'FOLLOWED'; document.getElementById('follow1').setAttribute('class', 'mybtn1') } else { document.querySelector("#follow1").innerHTML = 'FOLLOW'; document.getElementById('follow1').setAttribute('class', 'mybtn2') }   
             if(parseInt(follow2) === 1) { document.querySelector("#follow2").innerHTML = 'FOLLOWED'; document.getElementById('follow2').setAttribute('class', 'mybtn1') } else { document.querySelector("#follow2").innerHTML = 'FOLLOW'; document.getElementById('follow2').setAttribute('class', 'mybtn2') }   

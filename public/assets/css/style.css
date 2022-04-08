@@ -217,6 +217,7 @@ select:focus {
     transform: translate(0px, 0px);
   }
 }
+
 /* Global style */
 .mybtn1 {
   text-transform: uppercase;

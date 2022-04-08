@@ -24,13 +24,15 @@ import AdminView from './components/admin/Admin';
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/auth';
 
-
 function App() {
   //check for token in LocalStorage
   if (localStorage.token) {
     setAuthToken(localStorage.token);
+  } else {
+    store.dispatch({ type: 'LOGOUT' });
   }
   store.dispatch(loadUser());
+
 
   // log user out from all tabs if they log out in one tab
   window.addEventListener('storage', () => {

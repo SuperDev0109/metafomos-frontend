@@ -8,7 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Admin() {
     const dispatch = useDispatch();
-    const { isAuthenticated, admin } = useSelector(state => state.auth);
+    const { isAuthenticated } = useSelector(state => state.auth);
+    const { admin } = useSelector(state => state.auth.user);
     const { users } = useSelector(state => state.profile);
     const [formData, setFormData] = useState({
         id: '',
@@ -34,7 +35,13 @@ function Admin() {
             <tr key={user._id}>
                 <td>Level{user.level}</td>
                 <td>{user.email}</td>
+                <td>{user.firstname}&nbsp;{user.lastname}</td>
                 <td>{user.date_form}</td>
+                <td>{user.verified ? (
+                    <i class="fa fa-check activatedVerify"></i>
+                ) : (
+                    <i class="fa fa-check notactivatedVerify"></i>
+                )}</td>
                 <td>
                     <span onClick={() => updateUserModal(`${user.email}`, `${user._id}`)} style={{ marginRight: '20px', cursor: 'pointer' }}>
                         <i className='fas fa-edit' />
@@ -123,7 +130,9 @@ function Admin() {
                                                 <tr>
                                                     <th>Level</th>
                                                     <th>email</th>
+                                                    <th>name</th>
                                                     <th>joined at</th>
+                                                    <th>activated</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

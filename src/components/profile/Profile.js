@@ -105,10 +105,24 @@ const Profile = () => {
     }
 
     const onPersonalAction = () => {
-          const data = {
-               firstname: g_firstname,
-               lastname: g_lastname
-          }
+        const data = {
+            firstname: '',
+            lastname: ''
+        }
+        const firstnameInput = document.getElementById("g_firstname").value;
+        const lastnameInput = document.getElementById("g_lastname").value;
+        if(g_firstname != firstnameInput) {
+            data.firstname = firstnameInput;
+        } else {
+            data.firstname = g_firstname;
+        }
+
+        if(g_lastname != lastnameInput) {
+            data.lastname = lastnameInput;
+        } else {
+            data.lastname = g_lastname;
+        }
+          
           dispatch(savePersonalData(data));
     }
 
@@ -410,9 +424,9 @@ const Profile = () => {
                                         <form action="#" method="POST">
                                             
                                             <div className="form-group">
-                                                <input placeholder="First Name" defaultValue={firstname} onChange={onChange} name="g_firstname" className='spec_btn_input' style={{ marginBottom: '20px' }} />
-                                                <input placeholder="Last Name" defaultValue={lastname} onChange={onChange} name="g_lastname" className='spec_btn_input' style={{ marginBottom: '10px' }} />
-                                                <button onClick={() => onPersonalAction()} type="button" className="mybtn2" style={{textTransform: 'unset'}}>Submit</button>
+                                                <input placeholder="First Name" defaultValue={firstname} onChange={onChange} id="g_firstname" name="g_firstname" className='spec_btn_input' style={{ marginBottom: '20px' }} />
+                                                <input placeholder="Last Name" defaultValue={lastname} onChange={onChange} id="g_lastname" name="g_lastname" className='spec_btn_input' style={{ marginBottom: '10px' }} />
+                                                <button data-dismiss="modal" onClick={() => onPersonalAction()} type="button" className="mybtn2" style={{textTransform: 'unset'}}>Submit</button>
                                             </div>
                                         </form>
                                     </div>

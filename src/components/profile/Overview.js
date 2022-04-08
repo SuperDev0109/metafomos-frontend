@@ -26,15 +26,6 @@ const Overview = () => {
         }, 500);
 
         if (authFlag) {
-            // toast.success("Login Success", {
-            //     position: "top-right",
-            //     autoClose: 5000,
-            //     hideProgressBar: false,
-            //     closeOnClick: true,
-            //     pauseOnHover: true,
-            //     draggable: true,
-            //     progress: undefined,
-            //   });
             document.querySelector('#joinBtn').click();
             dispatch(setAuthFlag());
         } 
@@ -43,8 +34,6 @@ const Overview = () => {
         dispatch(getLevelandFollow());
         //referral Link part end
 
-        // from db and display the lv1~lv5 button.
-        // from db and display the lv1~lv5 button end.
       }, []);
 
     useEffect(() => {
@@ -128,8 +117,7 @@ const Overview = () => {
         console.log('sdf');
     }
 
-    const getPassToken = async () => {
-
+    const validateGetPassToken = () => {
         if(!verified || !legalnameBoolState) {
             toast.warning('Please finish your task.', {
                 position: "top-right",
@@ -140,8 +128,15 @@ const Overview = () => {
                 draggable: true,
                 progress: undefined,
               })
-            return;
+            return false;
+        } else {
+            return true;
         }
+    }
+
+    const getPassToken = async () => {
+
+        if (!validateGetPassToken()) return;
 
         if (!blockchain.account) {
             toast.warning('Please connect to your wallet.', {
@@ -169,7 +164,7 @@ const Overview = () => {
         // show the Get PassToken part end
     }
 
-    const getPioneerToken = async () => {
+    const validateGetPioneerToken = () => {
         if(parseInt(followCount) !== 5) {
             toast.warning('Please follow 5 social sites.', {
               position: "top-right",
@@ -180,8 +175,15 @@ const Overview = () => {
               draggable: true,
               progress: undefined,
             }) 
-            return;
+            return false;
+        } else {
+            return true;
         }
+    }
+
+    const getPioneerToken = async () => {
+
+        if(!validateGetPioneerToken()) return;
 
         if (!blockchain.account) {
             
@@ -560,7 +562,7 @@ const Overview = () => {
                                     <div className="header-area">
                                         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                             <h4>Mint your PassToken</h4>
-                                            <span style={{ float: 'right' }} onClick={() => getPassToken()} id="lv1" className="mybtn1">{ loading ? 'Minting...' : 'PassToken' }</span>
+                                            <span style={{ float: 'right' }} onClick={() => getPassToken()} id="lv1" className="mybtn2">{ loading ? 'Minting...' : 'PassToken' }</span>
                                         </div>
                                     </div>
                                     <div className="table-responsive">
@@ -624,7 +626,7 @@ const Overview = () => {
                                     <div className="header-area">
                                         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                             <h4>Mint your Access Token</h4>
-                                            <span style={{ float: 'right' }} onClick={() => getPioneerToken()} id="lv2" className="mybtn1">{ loading ? 'Minting...' : 'PioneerToken LV2' }</span>
+                                            <span style={{ float: 'right' }} onClick={() => getPioneerToken()} id="lv2" className="mybtn2">{ loading ? 'Minting...' : 'PioneerToken LV2' }</span>
                                         </div>
                                     </div>
                                     <div className="table-responsive">
@@ -923,7 +925,7 @@ const Overview = () => {
                                     <div className="header-area">
                                         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                                             <h4>Mint your Scout Token</h4>
-                                            <span style={{ float: 'right' }} id="lv3" className="mybtn1">{ loading ? 'Minting...' : 'ScoutToken LV3' }</span>
+                                            <span style={{ float: 'right' }} id="lv3" className="mybtn2">{ loading ? 'Minting...' : 'ScoutToken LV3' }</span>
                                         </div>
                                     </div>
                                 </div>
